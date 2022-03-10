@@ -1,0 +1,132 @@
+.hero {
+
+    background-color: $veryLightGray;
+
+    &__button {
+        @include breakpoint-up(large) {
+            padding-right: 1.0625rem;
+            padding-left: 1.0625rem;
+        }
+    }
+
+    &__container1{
+        @include breakpoint-up(large) {
+            min-height: 40.9375rem;
+            display: flex;
+            align-items: center;
+        }   
+    }
+
+    &__image {
+        position: relative;
+        z-index: 2;
+        background-image: url(/images/bg-intro-mobile.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+
+        @include breakpoint-up(medium){
+            min-height: 25rem;
+        }
+
+        @include breakpoint-up(large) {
+            flex: 3;
+            order: 2;
+            z-index: 2;
+            background-image: none;
+            height: 40.9375rem;
+            
+        }
+
+        &::before {
+            content:"";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url(/images/bg-intro-desktop.svg);
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
+            @include breakpoint-up(large) {
+                width: 120%;
+                background-position: 0% 70%;
+                background-size: 120%;
+            }
+        }
+
+        &::after {
+            content:"";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url(/images/image-mockups.png);
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
+            @include breakpoint-up(medium) {
+                background-size: 52%;
+                background-position: center 62%;
+            }
+
+            @include breakpoint-up(large) {
+                width: 120%;
+                height: 122%;
+                background-image: url(/images/image-mockups.png);  
+                background-size: 80%;
+                background-repeat: no-repeat;
+                background-position: center 128%;
+                left: 11%;
+            }
+            }
+        }
+
+    &__text {
+        text-align: center;
+        line-height: 2rem;
+        margin-bottom: 4.3rem;
+
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            z-index: 1;
+            text-align: left;
+            padding-right: 1.0625rem;
+            padding-left: 1.0625rem;
+            
+        }
+
+        h1 {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: lighter;
+            line-height: 3rem;
+            color: $darkBlue;
+            letter-spacing: 2px;
+            font-size: 40px;
+
+            @include breakpoint-up(large) {
+                font-size: 3.5rem;
+                letter-spacing: 2.5px;
+                line-height: 4rem;
+                padding-right: 1.0625rem;
+                padding-left: 1.0625rem;
+            }
+        }
+
+        p {
+            margin-bottom: 2.8rem;
+            color: $grayischBlue;
+            @include breakpoint-up(large) {
+                font-size: 1rem;
+                padding-right: 1.0625rem;
+                padding-left: 1.0625rem;
+            }
+        }
+
+        a {
+            border-top: 10rem;
+        }
+    }
+}

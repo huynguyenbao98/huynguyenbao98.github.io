@@ -1,0 +1,122 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    line-height: 1.3rem;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: $grayischBlue;
+    overflow-x: hidden;
+
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+
+}
+
+.container {
+    padding-top: 2.25rem;
+    padding-right: 1.0625rem;
+    padding-bottom: 2.25rem;
+    padding-left: 1.0625rem;
+    max-width: 69rem;
+    margin: 0 auto;
+
+    &--pall {
+        padding-top: 2.25rem;
+        padding-right: 1.0625rem;
+        padding-bottom: 2.25rem;
+        padding-left: 1.0625rem;
+    }
+
+    &--py {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
+
+    &--px {
+        padding-right: 1.0625rem;
+        padding-left: 1.0625rem;
+    }
+
+    &--pt {
+        padding-top: 2.25rem;
+    }
+
+    &-pr {
+        padding-right: 1.0625rem;
+    }
+
+    &--pb {
+        padding-bottom: 2.25rem;
+    }
+
+    &--pl {
+        padding-left: 1.0625rem;
+    }
+}
+
+// flexbox style
+.flex{
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c { // justify-content
+        justify-content: center;
+    }
+
+    &-ai-c { // align items -> usually centered
+        align-items: center;
+    }
+}
+
+// button style
+
+.button {
+    padding: 1.3125rem 2.1875rem; // top / right - default 16px
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    color: $white;
+    font-weight: 400;
+    transition: opacity 300ms ease-in-out;
+    font-size: $font-sm;
+    
+    &:hover{
+        opacity: 70%;
+    }
+
+}
+
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+};
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.has-fade {
+    visibility: hidden;
+}
